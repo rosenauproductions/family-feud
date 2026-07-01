@@ -1,0 +1,60 @@
+{
+  "name": "Sample Party Pack",
+  "questions": [
+    {
+      "question": "Name something you find in a kitchen",
+      "answers": [
+        { "text": "Refrigerator", "points": 42 },
+        { "text": "Stove / Oven", "points": 28 },
+        { "text": "Sink", "points": 14 },
+        { "text": "Microwave", "points": 8 },
+        { "text": "Knives", "points": 5 },
+        { "text": "Dishes", "points": 3 }
+      ]
+    },
+    {
+      "question": "Name a reason someone might be late to work",
+      "answers": [
+        { "text": "Traffic", "points": 45 },
+        { "text": "Overslept", "points": 25 },
+        { "text": "Kids / Family", "points": 12 },
+        { "text": "Car trouble", "points": 10 },
+        { "text": "Alarm didn't go off", "points": 5 },
+        { "text": "Bad weather", "points": 3 }
+      ]
+    },
+    {
+      "question": "Name something people do on a beach vacation",
+      "answers": [
+        { "text": "Swim", "points": 38 },
+        { "text": "Sunbathe", "points": 22 },
+        { "text": "Build sandcastles", "points": 18 },
+        { "text": "Read a book", "points": 10 },
+        { "text": "Play volleyball", "points": 7 },
+        { "text": "Collect shells", "points": 5 }
+      ]
+    },
+    {
+      "question": "Name a popular pizza topping",
+      "answers": [
+        { "text": "Pepperoni", "points": 48 },
+        { "text": "Cheese", "points": 20 },
+        { "text": "Mushrooms", "points": 12 },
+        { "text": "Sausage", "points": 9 },
+        { "text": "Peppers", "points": 6 },
+        { "text": "Olives", "points": 5 }
+      ]
+    },
+    {
+      "question": "Name something you pack for a camping trip",
+      "answers": [
+        { "text": "Tent", "points": 35 },
+        { "text": "Sleeping bag", "points": 25 },
+        { "text": "Food / Cooler", "points": 18 },
+        { "text": "Flashlight", "points": 10 },
+        { "text": "Bug spray", "points": 7 },
+        { "text": "Matches / Fire starter", "points": 5 }
+      ]
+    }
+  ]
+}

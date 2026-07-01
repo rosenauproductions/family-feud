@@ -1,0 +1,17 @@
+[Unit]
+Description=Family Feud projector display (Chromium kiosk)
+After=feud.service graphical.target
+Wants=feud.service
+Requires=graphical.target
+
+[Service]
+Type=simple
+User=pi
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/pi/.Xauthority
+ExecStart=/home/pi/family-feud/extras/pi-kiosk.sh
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=graphical.target

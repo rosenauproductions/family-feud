@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Family Feud — Display</title>
+  <link rel="stylesheet" href="/shared/theme.css" />
+  <link rel="stylesheet" href="/display/display.css" />
+</head>
+<body class="display-body">
+  <div id="display-stage" class="display-stage">
+    <div class="display-stage__inner" id="display-stage-inner" data-board-mode="backdrop">
+      <div class="display-scene">
+        <img
+          class="display-stage__bg"
+          src="/images/game-bg.jpg"
+          alt=""
+          onerror="if (!this.dataset.fallback) { this.dataset.fallback = '1'; this.src = '/images/game-bg.png'; }"
+        />
+        <div class="board-scene" id="board-scene" aria-hidden="true">
+          <div class="board-scene__frame">
+            <img class="board-scene__art" src="/images/game-board.png" alt="" />
+            <div class="board-hud" id="board-hud">
+              <div id="hud-round-score" class="board-hud__slot hud-round-score board-hud__round"></div>
+              <div id="hud-score-a" class="board-hud__slot hud-score-a board-hud__score"></div>
+              <div id="hud-score-b" class="board-hud__slot hud-score-b board-hud__score"></div>
+              <div id="hud-turn-a" class="board-hud__slot hud-turn-a board-hud__name"></div>
+              <div id="hud-turn-b" class="board-hud__slot hud-turn-b board-hud__name"></div>
+              <div id="hud-question" class="board-hud__slot hud-question question-box board-hud__panel">
+                <p id="question-placeholder" class="question-placeholder hidden">SURVEY SAYS…</p>
+                <h2 id="question-text" class="question-text hidden"></h2>
+              </div>
+              <p id="round-label" class="board-hud__slot hud-round-number board-hud__round-label board-hud__panel"></p>
+              <div id="hud-strikes-normal" class="board-hud__slot hud-strikes-normal hidden">
+                <div id="strikes" class="strikes"></div>
+              </div>
+              <div id="hud-strikes-enlarged" class="board-hud__slot hud-strikes-enlarged">
+                <div id="strikes-flyer" class="strikes strikes--enlarged"></div>
+              </div>
+            </div>
+            <div id="board" class="board hidden"></div>
+          </div>
+        </div>
+        <div class="display-scene__dim" aria-hidden="true"></div>
+      </div>
+
+      <main class="display-main">
+        <section id="screen-setup" class="fullscreen-screen dimmed-screen hidden">
+          <div class="logo-wrap logo-wrap--setup">
+            <h1 id="setup-title" class="feud-logo">Family Feud</h1>
+            <p class="hint">Waiting for host to start the game…</p>
+          </div>
+        </section>
+
+        <section id="screen-intro" class="fullscreen-screen hidden">
+          <div class="logo-wrap">
+            <h1 id="intro-title" class="feud-logo">Family Feud</h1>
+            <p class="hint">Use the controller to continue</p>
+          </div>
+        </section>
+
+        <section id="screen-rules" class="fullscreen-screen dimmed-screen hidden">
+          <h2 class="screen-title">Rules</h2>
+          <pre id="rules-body" class="rules-body"></pre>
+        </section>
+
+        <section id="screen-round-end" class="fullscreen-screen overlay-screen hidden">
+          <h2 id="round-end-title" class="winner-title"></h2>
+          <p id="round-end-points" class="winner-points"></p>
+        </section>
+
+        <section id="screen-game-end" class="fullscreen-screen hidden">
+          <h2 id="game-end-title" class="winner-title"></h2>
+          <div id="game-end-scores" class="final-scores"></div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div id="strikes-overlay" class="strikes-overlay hidden" aria-hidden="true"></div>
+
+  <script type="module" src="/display/display.js"></script>
+</body>
+</html>

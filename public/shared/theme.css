@@ -1,0 +1,37 @@
+:root {
+  --feud-blue: #0a2d6b;
+  --feud-blue-light: #1a4a9e;
+  --feud-gold: #f5c518;
+  --feud-gold-dark: #c9a012;
+  --feud-panel: #0f3d8c;
+  --feud-strike: #e11d48;
+  --text-light: #f8fafc;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  --font-display: "Arial Black", "Impact", "Haettenschweiler", sans-serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: var(--font-body);
+  color: var(--text-light);
+  background: radial-gradient(ellipse at center, #1a4a9e 0%, #061a3d 70%);
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+.hidden {
+  display: none !important;
+}
