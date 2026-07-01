@@ -1,25 +1,12 @@
 import { connect, sendAction } from '../shared/ws.js';
-import { playSound, stopAllMusic, setMasterVolume, configureSounds } from '../shared/audio.js';
+import { stopAllMusic } from '../shared/audio.js';
 
 const $ = (sel) => document.querySelector(sel);
 const EMOJIS = ['🔵', '🔴', '🟢', '🟡', '🟣', '🟠', '⭐', '🔥', '💎', '🎸', '🦁', '🐻'];
-const SOUND_KEYS = [
-  ['intro', 'Intro music'],
-  ['rules', 'Rules music'],
-  ['walkup', 'Walk-up music'],
-  ['question', 'Reveal question'],
-  ['ding', 'Correct answer'],
-  ['buzzer', 'Strike / buzzer'],
-  ['already_answered', 'Already answered'],
-  ['win', 'Win'],
-];
 
 let state = null;
 let questionFiles = [];
-let soundFiles = [];
-let serverInfo = null;
 let setupDraft = null;
-let lastSoundAt = 0;
 
 async function loadQuestionFiles() {
   try {
@@ -32,35 +19,6 @@ async function loadQuestionFiles() {
   }
 }
 
-async function loadSoundFiles() {
-  try {
-    const res = await fetch('/api/sound-files');
-    if (!res.ok) return;
-    const data = await res.json();
-    soundFiles = data.files ?? [];
-  } catch {
-    soundFiles = [];
-  }
-}
-
-async function loadServerInfo() {
-  try {
-    const res = await fetch('/api/info');
-    if (!res.ok) return;
-    serverInfo = await res.json();
-  } catch {
-    serverInfo = null;
-  }
-}
-
-function soundOptions(current) {
-  const files = soundFiles.length ? soundFiles : [current].filter(Boolean);
-  const unique = [...new Set(files)];
-  return unique
-    .map((f) => `<option value="${escapeHtml(f)}" ${f === current ? 'selected' : ''}>${escapeHtml(f)}</option>`)
-    .join('');
-}
-
 function teamById(id) {
   return state?.setup?.teams?.find((t) => t.id === id);
 }
@@ -71,25 +29,6 @@ function escapeHtml(str) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
-}
-
-function renderNetworkUrls() {
-  if (!serverInfo) return '';
-  const primary = serverInfo.mdnsUrl ?? serverInfo.bases?.[0];
-  if (!primary) return '';
-  return `
-    <div class="panel network-panel">
-      <h2>Party URLs</h2>
-      <p class="phase-label">Use on phone &amp; projector (same WiFi):</p>
-      <div class="url-block">
-        <span class="url-label">Controller</span>
-        <a class="party-url" href="${primary}/control/">${primary}/control/</a>
-      </div>
-      <div class="url-block">
-        <span class="url-label">Display</span>
-        <a class="party-url" href="${primary}/display/">${primary}/display/</a>
-      </div>
-    </div>`;
 }
 
 function renderConnection() {
@@ -124,7 +63,6 @@ function renderSetup() {
   const app = $('#app');
 
   app.innerHTML = `
-    ${renderNetworkUrls()}
     <div class="panel">
       <h2>Game</h2>
       <div class="field">
@@ -210,19 +148,6 @@ function renderSetup() {
       </div>
     </div>
 
-    <div class="panel">
-      <h2>Sounds</h2>
-      <p class="phase-label">Place audio files in <code>public/sounds/</code> on the server.</p>
-      ${SOUND_KEYS.map(([key, label]) => {
-        const current = setup.sounds?.[key] ?? `${key}.mp3`;
-        return `
-        <div class="field">
-          <label>${label}</label>
-          <select id="f-sound-${key}">${soundOptions(current)}</select>
-        </div>`;
-      }).join('')}
-    </div>
-
     <div class="btn-row">
       <button class="btn btn-primary" id="btn-start-game">Start game</button>
     </div>`;
@@ -241,11 +166,6 @@ function readSetupFromForm() {
   setup.firstControlTeamId = $('#f-first-control')?.value ?? 'a';
   setup.rulesText = $('#f-rules-text')?.value ?? setup.rulesText;
   setup.volume = parseFloat($('#f-volume').value);
-  setup.sounds = { ...(setup.sounds ?? {}) };
-  for (const [key] of SOUND_KEYS) {
-    const el = $(`#f-sound-${key}`);
-    if (el) setup.sounds[key] = el.value;
-  }
 
   for (const input of document.querySelectorAll('.team-name')) {
     const team = setup.teams.find((t) => t.id === input.dataset.team);
@@ -579,7 +499,7 @@ async function init() {
     render();
   });
 
-  await Promise.all([loadQuestionFiles(), loadSoundFiles(), loadServerInfo()]);
+  await loadQuestionFiles();
   if (state) render();
 }
 
