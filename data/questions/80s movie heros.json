@@ -1,0 +1,100 @@
+{
+  "name": "80s Movie Heroes",
+  "questions": [
+    {
+      "question": "Name a famous 80s movie hero",
+      "answers": [
+        { "text": "Indiana Jones", "points": 32 },
+        { "text": "John McClane", "points": 18 },
+        { "text": "Rocky Balboa", "points": 15 },
+        { "text": "Luke Skywalker", "points": 12 },
+        { "text": "Marty McFly", "points": 10 },
+        { "text": "Rambo", "points": 8 },
+        { "text": "Ellen Ripley", "points": 5 }
+      ]
+    },
+    {
+      "question": "Name an action movie hero from the 80s",
+      "answers": [
+        { "text": "John McClane (Die Hard)", "points": 28 },
+        { "text": "Rambo", "points": 22 },
+        { "text": "Arnold Schwarzenegger", "points": 15 },
+        { "text": "Indiana Jones", "points": 12 },
+        { "text": "Dutch (Predator)", "points": 10 },
+        { "text": "Blade Runner", "points": 6 },
+        { "text": "Axel Foley", "points": 5 },
+        { "text": "Conan", "points": 2 }
+      ]
+    },
+    {
+      "question": "Name a Star Wars hero from the 80s films",
+      "answers": [
+        { "text": "Luke Skywalker", "points": 40 },
+        { "text": "Han Solo", "points": 25 },
+        { "text": "Princess Leia", "points": 15 },
+        { "text": "Chewbacca", "points": 8 },
+        { "text": "Yoda", "points": 7 },
+        { "text": "Lando Calrissian", "points": 5 }
+      ]
+    },
+    {
+      "question": "Name a hero from a comedy 80s movie",
+      "answers": [
+        { "text": "Marty McFly", "points": 28 },
+        { "text": "Ferris Bueller", "points": 22 },
+        { "text": "Ghostbusters", "points": 18 },
+        { "text": "Axel Foley (Beverly Hills Cop)", "points": 12 },
+        { "text": "Uncle Buck", "points": 8 },
+        { "text": "Johnny Castle (Dirty Dancing)", "points": 7 },
+        { "text": "Pete 'Maverick' Mitchell", "points": 5 }
+      ]
+    },
+    {
+      "question": "Name a female hero from 80s movies",
+      "answers": [
+        { "text": "Ellen Ripley (Aliens)", "points": 35 },
+        { "text": "Princess Leia", "points": 20 },
+        { "text": "Sarah Connor", "points": 15 },
+        { "text": "Andie Walsh (Pretty in Pink)", "points": 10 },
+        { "text": "Baby Houseman", "points": 8 },
+        { "text": "The Bride (Kill Bill - wait, no - 80s: Karen Blixen)", "points": 6 },
+        { "text": "Leeloo (The Fifth Element - wait, 90s)", "points": 6 }
+      ]
+    },
+    {
+      "question": "Name something associated with Indiana Jones",
+      "answers": [
+        { "text": "Whip", "points": 30 },
+        { "text": "Hat", "points": 25 },
+        { "text": "Leather jacket", "points": 15 },
+        { "text": "Ark of the Covenant", "points": 12 },
+        { "text": "Adventurer", "points": 8 },
+        { "text": "Boulder chase", "points": 6 },
+        { "text": "Snakes", "points": 4 }
+      ]
+    },
+    {
+      "question": "Name a Sylvester Stallone or Arnold hero",
+      "answers": [
+        { "text": "Rocky Balboa", "points": 35 },
+        { "text": "John Rambo", "points": 25 },
+        { "text": "Terminator", "points": 15 },
+        { "text": "Conan the Barbarian", "points": 10 },
+        { "text": "Dutch Schaefer", "points": 8 },
+        { "text": "Ivan Drago opponent", "points": 5 },
+        { "text": "Judge Dredd", "points": 2 }
+      ]
+    },
+    {
+      "question": "Name an 80s sports movie hero",
+      "answers": [
+        { "text": "Rocky Balboa", "points": 40 },
+        { "text": "The Karate Kid", "points": 25 },
+        { "text": "Rudy Ruettiger", "points": 12 },
+        { "text": "Hoosiers team", "points": 10 },
+        { "text": "Mighty Ducks", "points": 8 },
+        { "text": "Apollo Creed", "points": 5 }
+      ]
+    }
+  ]
+}

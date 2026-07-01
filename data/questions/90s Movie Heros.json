@@ -1,0 +1,102 @@
+{
+  "name": "90s Movie Heroes",
+  "questions": [
+    {
+      "question": "Name a famous 90s movie hero",
+      "answers": [
+        { "text": "Neo (The Matrix)", "points": 22 },
+        { "text": "Forrest Gump", "points": 18 },
+        { "text": "Indiana Jones", "points": 15 },
+        { "text": "Jack Dawson (Titanic)", "points": 12 },
+        { "text": "William Wallace (Braveheart)", "points": 10 },
+        { "text": "Dr. Alan Grant (Jurassic Park)", "points": 8 },
+        { "text": "Ace Ventura", "points": 7 },
+        { "text": "Ellen Ripley", "points": 6 }
+      ]
+    },
+    {
+      "question": "Name an action movie hero from the 90s",
+      "answers": [
+        { "text": "Neo (The Matrix)", "points": 28 },
+        { "text": "John McClane", "points": 20 },
+        { "text": "Lara Croft", "points": 15 },
+        { "text": "Jack Traven (Speed)", "points": 12 },
+        { "text": "The Rock", "points": 10 },
+        { "text": "Austin Powers", "points": 8 },
+        { "text": "James Bond", "points": 7 }
+      ]
+    },
+    {
+      "question": "Name a hero from a 90s comedy movie",
+      "answers": [
+        { "text": "Ace Ventura", "points": 30 },
+        { "text": "Mrs. Doubtfire", "points": 22 },
+        { "text": "Forrest Gump", "points": 18 },
+        { "text": "Austin Powers", "points": 12 },
+        { "text": "The Mask", "points": 8 },
+        { "text": "Wayne Campbell", "points": 6 },
+        { "text": "Aladdin", "points": 4 }
+      ]
+    },
+    {
+      "question": "Name a Disney or animated 90s hero",
+      "answers": [
+        { "text": "Simba", "points": 35 },
+        { "text": "Aladdin", "points": 25 },
+        { "text": "Mulan", "points": 15 },
+        { "text": "Hercules", "points": 12 },
+        { "text": "Pocahontas", "points": 8 },
+        { "text": "Quasimodo", "points": 3 },
+        { "text": "Tarzan", "points": 2 }
+      ]
+    },
+    {
+      "question": "Name a 90s superhero",
+      "answers": [
+        { "text": "Batman", "points": 30 },
+        { "text": "Blade", "points": 18 },
+        { "text": "Spawn", "points": 15 },
+        { "text": "The Crow", "points": 12 },
+        { "text": "Trinity (The Matrix)", "points": 10 },
+        { "text": "Ghost Rider", "points": 8 },
+        { "text": "Mighty Morphin Power Rangers", "points": 7 }
+      ]
+    },
+    {
+      "question": "Name a Jurassic Park character",
+      "answers": [
+        { "text": "Dr. Alan Grant", "points": 35 },
+        { "text": "Dr. Ian Malcolm", "points": 22 },
+        { "text": "Dr. Ellie Sattler", "points": 15 },
+        { "text": "Lex Murphy", "points": 10 },
+        { "text": "Tim Murphy", "points": 8 },
+        { "text": "John Hammond", "points": 6 },
+        { "text": "Robert Muldoon", "points": 4 }
+      ]
+    },
+    {
+      "question": "Name a female hero from 90s movies",
+      "answers": [
+        { "text": "Lara Croft", "points": 28 },
+        { "text": "Ellen Ripley", "points": 22 },
+        { "text": "Mulan", "points": 18 },
+        { "text": "Trinity", "points": 12 },
+        { "text": "Sarah Connor", "points": 10 },
+        { "text": "Thelma & Louise", "points": 6 },
+        { "text": "Princess Fiona", "points": 4 }
+      ]
+    },
+    {
+      "question": "Name a sports or inspirational 90s movie hero",
+      "answers": [
+        { "text": "Rudy (Rudy)", "points": 30 },
+        { "text": "Forrest Gump", "points": 25 },
+        { "text": "The Mighty Ducks team", "points": 15 },
+        { "text": "Jerry Maguire", "points": 12 },
+        { "text": "The Sandlot kids", "points": 10 },
+        { "text": "Coach Bombay", "points": 5 },
+        { "text": "Rocky", "points": 3 }
+      ]
+    }
+  ]
+}

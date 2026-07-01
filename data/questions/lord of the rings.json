@@ -1,0 +1,95 @@
+{
+  "name": "Lord of the Rings",
+  "questions": [
+    {
+      "question": "Name a member of the Fellowship",
+      "answers": [
+        { "text": "Frodo", "points": 35 },
+        { "text": "Aragorn", "points": 22 },
+        { "text": "Gandalf", "points": 18 },
+        { "text": "Legolas", "points": 10 },
+        { "text": "Gimli", "points": 8 },
+        { "text": "Samwise", "points": 5 },
+        { "text": "Boromir", "points": 2 }
+      ]
+    },
+    {
+      "question": "Name a main hero",
+      "answers": [
+        { "text": "Frodo", "points": 32 },
+        { "text": "Aragorn", "points": 25 },
+        { "text": "Sam", "points": 18 },
+        { "text": "Gandalf", "points": 12 },
+        { "text": "Legolas", "points": 8 },
+        { "text": "Gimli", "points": 5 }
+      ]
+    },
+    {
+      "question": "Name a villain",
+      "answers": [
+        { "text": "Sauron", "points": 35 },
+        { "text": "Saruman", "points": 22 },
+        { "text": "Gollum", "points": 18 },
+        { "text": "Witch-king", "points": 10 },
+        { "text": "Orcs", "points": 8 },
+        { "text": "Balrog", "points": 5 },
+        { "text": "Shelob", "points": 2 }
+      ]
+    },
+    {
+      "question": "Name something Gandalf says/does",
+      "answers": [
+        { "text": "You shall not pass", "points": 30 },
+        { "text": "Wizard", "points": 20 },
+        { "text": "Staff", "points": 15 },
+        { "text": "Grey/White", "points": 12 },
+        { "text": "Eagle", "points": 8 },
+        { "text": "Fireworks", "points": 5 }
+      ]
+    },
+    {
+      "question": "Name a race in Middle-earth",
+      "answers": [
+        { "text": "Hobbits", "points": 35 },
+        { "text": "Elves", "points": 25 },
+        { "text": "Dwarves", "points": 18 },
+        { "text": "Humans", "points": 12 },
+        { "text": "Orcs", "points": 8 },
+        { "text": "Ents", "points": 4 }
+      ]
+    },
+    {
+      "question": "Name a location",
+      "answers": [
+        { "text": "The Shire", "points": 30 },
+        { "text": "Mordor", "points": 25 },
+        { "text": "Rivendell", "points": 15 },
+        { "text": "Gondor", "points": 12 },
+        { "text": "Rohan", "points": 10 },
+        { "text": "Moria", "points": 6 },
+        { "text": "Mount Doom", "points": 4 }
+      ]
+    },
+    {
+      "question": "Name something Frodo has",
+      "answers": [
+        { "text": "The One Ring", "points": 40 },
+        { "text": "Sting", "points": 18 },
+        { "text": "Sam", "points": 15 },
+        { "text": "Hobbit", "points": 12 },
+        { "text": "Mount Doom", "points": 8 }
+      ]
+    },
+    {
+      "question": "Name a famous quote",
+      "answers": [
+        { "text": "You shall not pass", "points": 28 },
+        { "text": "My precious", "points": 25 },
+        { "text": "One Ring", "points": 18 },
+        { "text": "There and back again", "points": 12 },
+        { "text": "I am no man", "points": 10 },
+        { "text": "Smallest person", "points": 7 }
+      ]
+    }
+  ]
+}
