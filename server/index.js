@@ -251,29 +251,37 @@ wss.on('connection', (ws, req) => {
 server.listen(PORT, '0.0.0.0', async () => {
   const info = networkInfo(PORT);
   const files = await listQuestionFiles();
+  const cloudBase = process.env.RENDER_EXTERNAL_URL?.replace(/\/$/, '');
 
-  try {
-    const bonjour = new Bonjour();
-    bonjour.publish({
-      name: MDNS_NAME,
-      type: 'http',
-      port: PORT,
-    });
-  } catch (err) {
-    console.warn('  mDNS: could not advertise (feud.local may not resolve):', err.message);
+  if (!process.env.RENDER) {
+    try {
+      const bonjour = new Bonjour();
+      bonjour.publish({
+        name: MDNS_NAME,
+        type: 'http',
+        port: PORT,
+      });
+    } catch (err) {
+      console.warn('  mDNS: could not advertise (feud.local may not resolve):', err.message);
+    }
   }
 
   console.log('');
   console.log('  Family Feud — party server');
   console.log('  ─────────────────────────');
-  console.log(`  Primary:    ${info.mdnsUrl}`);
-  console.log(`  Display:    ${info.mdnsUrl}/display/`);
-  console.log(`  Controller: ${info.mdnsUrl}/control/`);
-  console.log('');
-  console.log('  Also try:');
-  for (const url of info.bases) {
-    if (url !== info.mdnsUrl) {
-      console.log(`    ${url}/control/`);
+  if (cloudBase) {
+    console.log(`  Display:    ${cloudBase}/display/`);
+    console.log(`  Controller: ${cloudBase}/control/`);
+  } else {
+    console.log(`  Primary:    ${info.mdnsUrl}`);
+    console.log(`  Display:    ${info.mdnsUrl}/display/`);
+    console.log(`  Controller: ${info.mdnsUrl}/control/`);
+    console.log('');
+    console.log('  Also try:');
+    for (const url of info.bases) {
+      if (url !== info.mdnsUrl) {
+        console.log(`    ${url}/control/`);
+      }
     }
   }
   console.log('');

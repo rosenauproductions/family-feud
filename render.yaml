@@ -1,0 +1,13 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+# Connect repo at https://dashboard.render.com/ → New → Blueprint
+services:
+  - type: web
+    name: family-feud
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /display/
+    envVars:
+      - key: NODE_ENV
+        value: production

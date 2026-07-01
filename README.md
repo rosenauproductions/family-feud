@@ -112,6 +112,41 @@ Restore that snapshot later: `git checkout milestone-v1-gameplay`
 npm run dev   # auto-restart on server changes
 ```
 
+## Deploy on Render (cloud)
+
+The app is a **Node web service** (HTTP + WebSockets). Render’s free tier works; expect a **~30s cold start** after idle sleep.
+
+### Option A — Blueprint (easiest)
+
+1. Push this repo to GitHub (already at `rosenauproductions/family-feud`).
+2. Go to [Render Dashboard](https://dashboard.render.com/) → **New** → **Blueprint**.
+3. Connect the `family-feud` repo — Render reads `render.yaml` automatically.
+4. Click **Apply**. Wait for the deploy to finish.
+5. Open your service URL:
+   - **Display:** `https://YOUR-SERVICE.onrender.com/display/`
+   - **Controller:** `https://YOUR-SERVICE.onrender.com/control/`
+
+### Option B — Manual web service
+
+1. **New** → **Web Service** → connect `rosenauproductions/family-feud`.
+2. Settings:
+   | Field | Value |
+   |-------|-------|
+   | Runtime | Node |
+   | Build Command | `npm install` |
+   | Start Command | `npm start` |
+   | Health Check Path | `/display/` |
+3. **Create Web Service**.
+
+`PORT` is set by Render automatically. No extra env vars required.
+
+### Cloud caveats
+
+- **Same URL for everyone** — share the controller link; no `feud.local` on Render.
+- **Game state is in memory** — redeploys or sleep/wake reset the game.
+- **Audio** — the display browser may still need one tap for sound (autoplay policy).
+- **Party at home?** A Mac or Pi on WiFi is still better than cloud (no sleep, lower latency).
+
 ## Raspberry Pi projector (sound on boot)
 
 1. Copy the repo to the Pi (e.g. `/home/pi/family-feud`), run `npm install`, enable the game server:
