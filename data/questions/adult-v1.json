@@ -1,0 +1,104 @@
+{
+  "name": "Adult Edition",
+  "questions": [
+    {
+      "question": "Name something people do to relax after work",
+      "answers": [
+        { "text": "Watch TV", "points": 35 },
+        { "text": "Have a drink", "points": 18 },
+        { "text": "Scroll on phone", "points": 15 },
+        { "text": "Take a nap", "points": 12 },
+        { "text": "Exercise / workout", "points": 8 },
+        { "text": "Read a book", "points": 7 },
+        { "text": "Listen to music", "points": 5 }
+      ]
+    },
+    {
+      "question": "Name a common household chore",
+      "answers": [
+        { "text": "Doing the dishes", "points": 30 },
+        { "text": "Laundry", "points": 25 },
+        { "text": "Vacuuming", "points": 15 },
+        { "text": "Taking out the trash", "points": 12 },
+        { "text": "Cleaning the bathroom", "points": 8 },
+        { "text": "Mowing the lawn", "points": 6 },
+        { "text": "Cooking", "points": 4 }
+      ]
+    },
+    {
+      "question": "Name a popular vacation destination",
+      "answers": [
+        { "text": "Beach", "points": 28 },
+        { "text": "Disney World", "points": 18 },
+        { "text": "Las Vegas", "points": 12 },
+        { "text": "New York City", "points": 10 },
+        { "text": "Europe", "points": 9 },
+        { "text": "Mountains", "points": 8 },
+        { "text": "Hawaii", "points": 7 },
+        { "text": "Cruise", "points": 5 }
+      ]
+    },
+    {
+      "question": "Name something people spend too much money on",
+      "answers": [
+        { "text": "Coffee", "points": 25 },
+        { "text": "Eating out", "points": 20 },
+        { "text": "Gas / Car", "points": 15 },
+        { "text": "Shopping / Clothes", "points": 12 },
+        { "text": "Subscriptions", "points": 10 },
+        { "text": "Electronics", "points": 8 },
+        { "text": "Rent / Mortgage", "points": 6 },
+        { "text": "Groceries", "points": 4 }
+      ]
+    },
+    {
+      "question": "Name a common job or profession",
+      "answers": [
+        { "text": "Teacher", "points": 22 },
+        { "text": "Doctor / Nurse", "points": 18 },
+        { "text": "Police Officer", "points": 12 },
+        { "text": "Engineer", "points": 10 },
+        { "text": "Lawyer", "points": 9 },
+        { "text": "Accountant", "points": 8 },
+        { "text": "Chef", "points": 7 },
+        { "text": "Truck Driver", "points": 6 }
+      ]
+    },
+    {
+      "question": "Name something in your wallet or purse",
+      "answers": [
+        { "text": "Credit cards", "points": 35 },
+        { "text": "Driver's license", "points": 25 },
+        { "text": "Cash", "points": 15 },
+        { "text": "Photos", "points": 8 },
+        { "text": "Insurance card", "points": 7 },
+        { "text": "Receipts", "points": 6 },
+        { "text": "Keys", "points": 4 }
+      ]
+    },
+    {
+      "question": "Name a type of restaurant people go to on date night",
+      "answers": [
+        { "text": "Italian", "points": 28 },
+        { "text": "Steakhouse", "points": 20 },
+        { "text": "Mexican", "points": 15 },
+        { "text": "Chinese", "points": 12 },
+        { "text": "Seafood", "points": 10 },
+        { "text": "Japanese / Sushi", "points": 8 },
+        { "text": "Fine Dining", "points": 7 }
+      ]
+    },
+    {
+      "question": "Name something people complain about at work",
+      "answers": [
+        { "text": "Boss", "points": 25 },
+        { "text": "Meetings", "points": 20 },
+        { "text": "Pay / Salary", "points": 18 },
+        { "text": "Coworkers", "points": 12 },
+        { "text": "Long hours", "points": 10 },
+        { "text": "Traffic / Commute", "points": 8 },
+        { "text": "Too much work", "points": 7 }
+      ]
+    }
+  ]
+}

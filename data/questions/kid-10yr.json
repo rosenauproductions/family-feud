@@ -1,0 +1,101 @@
+{
+  "name": "Kids Fun Edition",
+  "questions": [
+    {
+      "question": "Name a favorite school subject",
+      "answers": [
+        { "text": "Math", "points": 28 },
+        { "text": "Recess", "points": 22 },
+        { "text": "Science", "points": 15 },
+        { "text": "Art", "points": 12 },
+        { "text": "Gym", "points": 10 },
+        { "text": "Reading", "points": 8 },
+        { "text": "Music", "points": 5 }
+      ]
+    },
+    {
+      "question": "Name something you do at recess",
+      "answers": [
+        { "text": "Play tag", "points": 30 },
+        { "text": "Swing", "points": 20 },
+        { "text": "Play soccer", "points": 15 },
+        { "text": "Slide", "points": 12 },
+        { "text": "Climb monkey bars", "points": 10 },
+        { "text": "Jump rope", "points": 8 },
+        { "text": "Talk with friends", "points": 5 }
+      ]
+    },
+    {
+      "question": "Name a popular cartoon character",
+      "answers": [
+        { "text": "SpongeBob", "points": 35 },
+        { "text": "Paw Patrol characters", "points": 18 },
+        { "text": "Mickey Mouse", "points": 12 },
+        { "text": "Sonic", "points": 10 },
+        { "text": "Bluey", "points": 9 },
+        { "text": "Batman", "points": 8 },
+        { "text": "Minions", "points": 5 },
+        { "text": "Peppa Pig", "points": 3 }
+      ]
+    },
+    {
+      "question": "Name a type of pet",
+      "answers": [
+        { "text": "Dog", "points": 45 },
+        { "text": "Cat", "points": 25 },
+        { "text": "Hamster", "points": 10 },
+        { "text": "Fish", "points": 8 },
+        { "text": "Bird", "points": 6 },
+        { "text": "Turtle", "points": 4 },
+        { "text": "Rabbit", "points": 2 }
+      ]
+    },
+    {
+      "question": "Name a superhero",
+      "answers": [
+        { "text": "Spider-Man", "points": 38 },
+        { "text": "Batman", "points": 22 },
+        { "text": "Superman", "points": 15 },
+        { "text": "Iron Man", "points": 10 },
+        { "text": "Captain America", "points": 8 },
+        { "text": "Wonder Woman", "points": 5 },
+        { "text": "Hulk", "points": 2 }
+      ]
+    },
+    {
+      "question": "Name your favorite ice cream flavor",
+      "answers": [
+        { "text": "Chocolate", "points": 40 },
+        { "text": "Vanilla", "points": 22 },
+        { "text": "Strawberry", "points": 15 },
+        { "text": "Cookie Dough", "points": 10 },
+        { "text": "Mint Chocolate Chip", "points": 8 },
+        { "text": "Rocky Road", "points": 5 }
+      ]
+    },
+    {
+      "question": "Name something you take to school",
+      "answers": [
+        { "text": "Backpack", "points": 35 },
+        { "text": "Lunchbox", "points": 20 },
+        { "text": "Pencil", "points": 15 },
+        { "text": "Notebook", "points": 12 },
+        { "text": "Water bottle", "points": 8 },
+        { "text": "Jacket", "points": 5 },
+        { "text": "Homework", "points": 5 }
+      ]
+    },
+    {
+      "question": "Name a fun sport to play",
+      "answers": [
+        { "text": "Soccer", "points": 32 },
+        { "text": "Basketball", "points": 25 },
+        { "text": "Football", "points": 15 },
+        { "text": "Swimming", "points": 10 },
+        { "text": "Baseball", "points": 8 },
+        { "text": "Tag", "points": 6 },
+        { "text": "Volleyball", "points": 4 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "name": "Teen Edition",
+  "questions": [
+    {
+      "question": "Name a popular social media app",
+      "answers": [
+        { "text": "TikTok", "points": 45 },
+        { "text": "Instagram", "points": 25 },
+        { "text": "Snapchat", "points": 15 },
+        { "text": "YouTube", "points": 8 },
+        { "text": "Twitter / X", "points": 4 },
+        { "text": "Discord", "points": 3 }
+      ]
+    },
+    {
+      "question": "Name a subject you take in high school",
+      "answers": [
+        { "text": "Math", "points": 30 },
+        { "text": "Science", "points": 18 },
+        { "text": "English", "points": 15 },
+        { "text": "History", "points": 12 },
+        { "text": "Gym", "points": 10 },
+        { "text": "Art", "points": 8 },
+        { "text": "Biology", "points": 7 }
+      ]
+    },
+    {
+      "question": "Name a fast food restaurant",
+      "answers": [
+        { "text": "McDonald's", "points": 40 },
+        { "text": "Chick-fil-A", "points": 20 },
+        { "text": "Taco Bell", "points": 12 },
+        { "text": "Burger King", "points": 10 },
+        { "text": "Wendy's", "points": 8 },
+        { "text": "Starbucks", "points": 6 },
+        { "text": "Subway", "points": 4 }
+      ]
+    },
+    {
+      "question": "Name a popular music genre",
+      "answers": [
+        { "text": "Rap / Hip-Hop", "points": 28 },
+        { "text": "Pop", "points": 25 },
+        { "text": "Rock", "points": 15 },
+        { "text": "Electronic / EDM", "points": 12 },
+        { "text": "R&B", "points": 10 },
+        { "text": "Indie", "points": 6 },
+        { "text": "Country", "points": 4 }
+      ]
+    },
+    {
+      "question": "Name something teens do on their phone",
+      "answers": [
+        { "text": "Scroll TikTok", "points": 35 },
+        { "text": "Text friends", "points": 22 },
+        { "text": "Take selfies", "points": 15 },
+        { "text": "Play games", "points": 12 },
+        { "text": "Listen to music", "points": 10 },
+        { "text": "Watch YouTube", "points": 6 }
+      ]
+    },
+    {
+      "question": "Name a popular video game",
+      "answers": [
+        { "text": "Fortnite", "points": 30 },
+        { "text": "Roblox", "points": 25 },
+        { "text": "Minecraft", "points": 18 },
+        { "text": "Call of Duty", "points": 10 },
+        { "text": "NBA 2K", "points": 8 },
+        { "text": "Among Us", "points": 5 },
+        { "text": "GTA", "points": 4 }
+      ]
+    },
+    {
+      "question": "Name a way to relax after school",
+      "answers": [
+        { "text": "Watch TV / Netflix", "points": 32 },
+        { "text": "Play video games", "points": 25 },
+        { "text": "Listen to music", "points": 15 },
+        { "text": "Sleep / nap", "points": 12 },
+        { "text": "Scroll on phone", "points": 8 },
+        { "text": "Hang with friends", "points": 5 },
+        { "text": "Eat snacks", "points": 3 }
+      ]
+    },
+    {
+      "question": "Name a favorite snack",
+      "answers": [
+        { "text": "Chips", "points": 28 },
+        { "text": "Pizza", "points": 20 },
+        { "text": "Candy", "points": 15 },
+        { "text": "Ice cream", "points": 12 },
+        { "text": "Cookies", "points": 10 },
+        { "text": "Popcorn", "points": 8 },
+        { "text": "Fruit snacks", "points": 7 }
+      ]
+    }
+  ]
+}

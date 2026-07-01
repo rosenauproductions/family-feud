@@ -1,0 +1,101 @@
+{
+  "name": "Bible Edition",
+  "questions": [
+    {
+      "question": "Name a book of the Bible",
+      "answers": [
+        { "text": "Genesis", "points": 35 },
+        { "text": "Exodus", "points": 18 },
+        { "text": "Psalms", "points": 15 },
+        { "text": "Matthew", "points": 12 },
+        { "text": "Revelation", "points": 8 },
+        { "text": "John", "points": 6 },
+        { "text": "Acts", "points": 4 },
+        { "text": "Proverbs", "points": 2 }
+      ]
+    },
+    {
+      "question": "Name one of the Ten Commandments",
+      "answers": [
+        { "text": "Thou shalt not kill", "points": 28 },
+        { "text": "Thou shalt not steal", "points": 22 },
+        { "text": "Honor thy father and mother", "points": 18 },
+        { "text": "Thou shalt not commit adultery", "points": 12 },
+        { "text": "Thou shalt not bear false witness", "points": 9 },
+        { "text": "Remember the Sabbath day", "points": 6 },
+        { "text": "Thou shalt not covet", "points": 5 }
+      ]
+    },
+    {
+      "question": "Name a miracle Jesus performed",
+      "answers": [
+        { "text": "Healing the sick", "points": 25 },
+        { "text": "Walking on water", "points": 20 },
+        { "text": "Feeding the 5000", "points": 18 },
+        { "text": "Turning water into wine", "points": 15 },
+        { "text": "Raising Lazarus", "points": 10 },
+        { "text": "Calming the storm", "points": 7 },
+        { "text": "Resurrecting from the dead", "points": 5 }
+      ]
+    },
+    {
+      "question": "Name a person who appears in the Bible",
+      "answers": [
+        { "text": "Jesus", "points": 40 },
+        { "text": "Moses", "points": 22 },
+        { "text": "David", "points": 15 },
+        { "text": "Abraham", "points": 10 },
+        { "text": "Noah", "points": 6 },
+        { "text": "Mary", "points": 4 },
+        { "text": "Paul", "points": 3 }
+      ]
+    },
+    {
+      "question": "Name something associated with Noah's Ark",
+      "answers": [
+        { "text": "Animals", "points": 38 },
+        { "text": "Flood", "points": 25 },
+        { "text": "Rain", "points": 15 },
+        { "text": "Dove", "points": 10 },
+        { "text": "Rainbow", "points": 8 },
+        { "text": "Two of each kind", "points": 4 }
+      ]
+    },
+    {
+      "question": "Name one of the disciples of Jesus",
+      "answers": [
+        { "text": "Peter", "points": 32 },
+        { "text": "John", "points": 20 },
+        { "text": "Matthew", "points": 15 },
+        { "text": "Thomas", "points": 12 },
+        { "text": "Judas", "points": 10 },
+        { "text": "Andrew", "points": 6 },
+        { "text": "James", "points": 5 }
+      ]
+    },
+    {
+      "question": "Name a king from the Bible",
+      "answers": [
+        { "text": "David", "points": 35 },
+        { "text": "Solomon", "points": 25 },
+        { "text": "Herod", "points": 12 },
+        { "text": "Saul", "points": 10 },
+        { "text": "Nebuchadnezzar", "points": 8 },
+        { "text": "Hezekiah", "points": 5 },
+        { "text": "Josiah", "points": 5 }
+      ]
+    },
+    {
+      "question": "Name a woman mentioned in the Bible",
+      "answers": [
+        { "text": "Mary", "points": 40 },
+        { "text": "Eve", "points": 20 },
+        { "text": "Sarah", "points": 12 },
+        { "text": "Ruth", "points": 10 },
+        { "text": "Esther", "points": 8 },
+        { "text": "Delilah", "points": 5 },
+        { "text": "Jezebel", "points": 5 }
+      ]
+    }
+  ]
+}
