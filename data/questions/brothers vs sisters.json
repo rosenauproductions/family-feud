@@ -1,0 +1,89 @@
+{
+  "name": "Brothers vs Sisters",
+  "questions": [
+    {
+      "question": "Name something brothers do better than sisters",
+      "answers": [
+        { "text": "Sports", "points": 32 },
+        { "text": "Video games", "points": 25 },
+        { "text": "Fix things", "points": 15 },
+        { "text": "Eat a lot", "points": 12 },
+        { "text": "Burping", "points": 8 },
+        { "text": "Lifting heavy", "points": 6 },
+        { "text": "Teasing", "points": 2 }
+      ]
+    },
+    {
+      "question": "Name something sisters do better than brothers",
+      "answers": [
+        { "text": "Hair & makeup", "points": 30 },
+        { "text": "Shopping", "points": 22 },
+        { "text": "Dancing", "points": 18 },
+        { "text": "Singing", "points": 12 },
+        { "text": "Organizing", "points": 10 },
+        { "text": "Talking", "points": 6 },
+        { "text": "Fashion", "points": 2 }
+      ]
+    },
+    {
+      "question": "Name something siblings fight about",
+      "answers": [
+        { "text": "TV remote", "points": 28 },
+        { "text": "Whose turn it is", "points": 22 },
+        { "text": "Food", "points": 15 },
+        { "text": "Bathroom time", "points": 12 },
+        { "text": "Chores", "points": 10 },
+        { "text": "Toys/Games", "points": 8 },
+        { "text": "Phone charger", "points": 5 }
+      ]
+    },
+    {
+      "question": "Name a chore brothers hate doing",
+      "answers": [
+        { "text": "Dishes", "points": 30 },
+        { "text": "Laundry", "points": 20 },
+        { "text": "Cleaning room", "points": 18 },
+        { "text": "Vacuuming", "points": 12 },
+        { "text": "Taking out trash", "points": 10 },
+        { "text": "Mowing lawn", "points": 6 },
+        { "text": "Dusting", "points": 4 }
+      ]
+    },
+    {
+      "question": "Name a chore sisters hate doing",
+      "answers": [
+        { "text": "Taking out trash", "points": 25 },
+        { "text": "Cleaning bathroom", "points": 22 },
+        { "text": "Mowing lawn", "points": 15 },
+        { "text": "Dishes", "points": 15 },
+        { "text": "Laundry", "points": 12 },
+        { "text": "Lifting heavy stuff", "points": 8 },
+        { "text": "Fixing things", "points": 3 }
+      ]
+    },
+    {
+      "question": "Name something all siblings share",
+      "answers": [
+        { "text": "Bathroom", "points": 28 },
+        { "text": "Parents", "points": 25 },
+        { "text": "Toys/Games", "points": 18 },
+        { "text": "Food", "points": 12 },
+        { "text": "TV", "points": 8 },
+        { "text": "Room", "points": 6 },
+        { "text": "Secrets", "points": 3 }
+      ]
+    },
+    {
+      "question": "Name a fun sibling activity",
+      "answers": [
+        { "text": "Play video games", "points": 30 },
+        { "text": "Watch movies", "points": 22 },
+        { "text": "Play outside", "points": 18 },
+        { "text": "Board games", "points": 12 },
+        { "text": "Sports", "points": 10 },
+        { "text": "Pranks", "points": 5 },
+        { "text": "Bake cookies", "points": 3 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "name": "Fortnite Edition",
+  "questions": [
+    {
+      "question": "Name a popular Fortnite skin",
+      "answers": [
+        { "text": "Peely", "points": 28 },
+        { "text": "Jonesy", "points": 18 },
+        { "text": "Fishstick", "points": 15 },
+        { "text": "Renegade Raider", "points": 12 },
+        { "text": "Drift", "points": 10 },
+        { "text": "Raven", "points": 8 },
+        { "text": "Midas", "points": 6 },
+        { "text": "Default", "points": 3 }
+      ]
+    },
+    {
+      "question": "Name a Fortnite game mode",
+      "answers": [
+        { "text": "Battle Royale", "points": 45 },
+        { "text": "Zero Build", "points": 20 },
+        { "text": "Creative", "points": 12 },
+        { "text": "Ranked", "points": 10 },
+        { "text": "Save the World", "points": 8 },
+        { "text": "Duos", "points": 5 }
+      ]
+    },
+    {
+      "question": "Name something you find in Fortnite",
+      "answers": [
+        { "text": "Loot chest", "points": 30 },
+        { "text": "Weapons", "points": 25 },
+        { "text": "Building materials", "points": 18 },
+        { "text": "Healing items", "points": 12 },
+        { "text": "Vending machine", "points": 8 },
+        { "text": "Supply drop", "points": 7 }
+      ]
+    },
+    {
+      "question": "Name a popular Fortnite emote",
+      "answers": [
+        { "text": "Default Dance", "points": 35 },
+        { "text": "Take the L", "points": 22 },
+        { "text": "Floss", "points": 15 },
+        { "text": "Pump It Up", "points": 10 },
+        { "text": "Smooth Moves", "points": 8 },
+        { "text": "Get Down", "points": 6 },
+        { "text": "Orange Justice", "points": 4 }
+      ]
+    },
+    {
+      "question": "Name a Fortnite weapon",
+      "answers": [
+        { "text": "Assault Rifle", "points": 28 },
+        { "text": "Shotgun", "points": 22 },
+        { "text": "Sniper", "points": 18 },
+        { "text": "Pickaxe", "points": 12 },
+        { "text": "Rocket Launcher", "points": 10 },
+        { "text": "SMG", "points": 6 },
+        { "text": "Grenade", "points": 4 }
+      ]
+    },
+    {
+      "question": "Name something players build in Fortnite",
+      "answers": [
+        { "text": "Walls", "points": 30 },
+        { "text": "Ramps", "points": 25 },
+        { "text": "Floors", "points": 18 },
+        { "text": "Pyramids", "points": 12 },
+        { "text": "Fort", "points": 10 },
+        { "text": "1x1", "points": 5 }
+      ]
+    },
+    {
+      "question": "Name a reason you lose in Fortnite",
+      "answers": [
+        { "text": "Third partied", "points": 25 },
+        { "text": "Bad aim", "points": 20 },
+        { "text": "Storm", "points": 18 },
+        { "text": "Team wiped", "points": 15 },
+        { "text": "No mats", "points": 12 },
+        { "text": "Lag", "points": 6 },
+        { "text": "Bush camper", "points": 4 }
+      ]
+    },
+    {
+      "question": "Name a popular Fortnite location",
+      "answers": [
+        { "text": "Tilted Towers", "points": 30 },
+        { "text": "Pleasant Park", "points": 18 },
+        { "text": "Retail Row", "points": 15 },
+        { "text": "Lazy Lake", "points": 12 },
+        { "text": "The Agency", "points": 10 },
+        { "text": "Loot Lake", "points": 8 },
+        { "text": "Salty Springs", "points": 7 }
+      ]
+    }
+  ]
+}

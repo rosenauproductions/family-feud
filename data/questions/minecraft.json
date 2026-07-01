@@ -1,0 +1,101 @@
+{
+  "name": "Minecraft Edition",
+  "questions": [
+    {
+      "question": "Name a Minecraft mob",
+      "answers": [
+        { "text": "Creeper", "points": 35 },
+        { "text": "Zombie", "points": 22 },
+        { "text": "Skeleton", "points": 15 },
+        { "text": "Enderman", "points": 12 },
+        { "text": "Spider", "points": 8 },
+        { "text": "Slime", "points": 5 },
+        { "text": "Pig", "points": 3 }
+      ]
+    },
+    {
+      "question": "Name something you craft in Minecraft",
+      "answers": [
+        { "text": "Pickaxe", "points": 30 },
+        { "text": "Sword", "points": 22 },
+        { "text": "Chest", "points": 18 },
+        { "text": "Furnace", "points": 12 },
+        { "text": "Bed", "points": 10 },
+        { "text": "Torch", "points": 6 },
+        { "text": "Boat", "points": 2 }
+      ]
+    },
+    {
+      "question": "Name a Minecraft biome",
+      "answers": [
+        { "text": "Forest", "points": 25 },
+        { "text": "Desert", "points": 20 },
+        { "text": "Ocean", "points": 15 },
+        { "text": "Mountains", "points": 12 },
+        { "text": "Taiga", "points": 10 },
+        { "text": "Nether", "points": 8 },
+        { "text": "End", "points": 6 },
+        { "text": "Plains", "points": 4 }
+      ]
+    },
+    {
+      "question": "Name a valuable Minecraft ore",
+      "answers": [
+        { "text": "Diamond", "points": 45 },
+        { "text": "Gold", "points": 18 },
+        { "text": "Iron", "points": 15 },
+        { "text": "Emerald", "points": 10 },
+        { "text": "Redstone", "points": 6 },
+        { "text": "Coal", "points": 4 },
+        { "text": "Lapis", "points": 2 }
+      ]
+    },
+    {
+      "question": "Name a Minecraft boss",
+      "answers": [
+        { "text": "Ender Dragon", "points": 35 },
+        { "text": "Wither", "points": 25 },
+        { "text": "Warden", "points": 18 },
+        { "text": "Elder Guardian", "points": 12 },
+        { "text": "Ravager", "points": 6 },
+        { "text": "Evoker", "points": 4 }
+      ]
+    },
+    {
+      "question": "Name something you build in Minecraft",
+      "answers": [
+        { "text": "House", "points": 35 },
+        { "text": "Castle", "points": 20 },
+        { "text": "Farm", "points": 15 },
+        { "text": "Redstone contraption", "points": 12 },
+        { "text": "Bridge", "points": 8 },
+        { "text": "Mine", "points": 6 },
+        { "text": "Portal", "points": 4 }
+      ]
+    },
+    {
+      "question": "Name a Minecraft food",
+      "answers": [
+        { "text": "Steak", "points": 25 },
+        { "text": "Bread", "points": 20 },
+        { "text": "Apple", "points": 15 },
+        { "text": "Golden Apple", "points": 12 },
+        { "text": "Cake", "points": 10 },
+        { "text": "Cookie", "points": 8 },
+        { "text": "Carrot", "points": 6 },
+        { "text": "Mushroom Stew", "points": 4 }
+      ]
+    },
+    {
+      "question": "Name a tool in Minecraft",
+      "answers": [
+        { "text": "Pickaxe", "points": 35 },
+        { "text": "Sword", "points": 25 },
+        { "text": "Axe", "points": 15 },
+        { "text": "Shovel", "points": 12 },
+        { "text": "Bow", "points": 8 },
+        { "text": "Hoe", "points": 5 }
+      ]
+    }
+  ]
+}
