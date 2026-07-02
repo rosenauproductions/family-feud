@@ -1,0 +1,57 @@
+{
+  "name": "Forgotten Vacation Edition",
+  "questions": [
+    {
+      "question": "Name something people forget to bring on vacation.",
+      "answers": [
+        { "text": "Phone charger", "points": 28 },
+        { "text": "Toothbrush", "points": 18 },
+        { "text": "Swimsuit", "points": 14 },
+        { "text": "Sunscreen", "points": 12 },
+        { "text": "Pajamas", "points": 10 },
+        { "text": "Medications", "points": 8 },
+        { "text": "Snacks", "points": 6 },
+        { "text": "Passport/ID", "points": 4 }
+      ]
+    },
+    {
+      "question": "What is something you do when you wake up in the morning?",
+      "answers": [
+        { "text": "BRUSH TEETH", "points": 30 },
+        { "text": "CHECK PHONE", "points": 22 },
+        { "text": "USE BATHROOM", "points": 18 },
+        { "text": "SHOWER / BATH", "points": 12 },
+        { "text": "EAT BREAKFAST", "points": 10 },
+        { "text": "GET DRESSED", "points": 5 },
+        { "text": "MAKE COFFEE", "points": 3 },
+        { "text": "HIT SNOOZE", "points": 2 }
+      ]
+    },
+    {
+      "question": "Name something you keep in your car 'just in case'.",
+      "answers": [
+        { "text": "SPARE TIRE / JACK", "points": 35 },
+        { "text": "JUMPER CABLES", "points": 25 },
+        { "text": "FLASHLIGHT", "points": 15 },
+        { "text": "FIRST AID KIT", "points": 10 },
+        { "text": "WATER / FOOD", "points": 8 },
+        { "text": "BLANKET", "points": 5 },
+        { "text": "MONEY / CASH", "points": 3 },
+        { "text": "UMBRELLA", "points": 2 }
+      ]
+    },
+    {
+      "question": "Name a place with long bathroom lines.",
+      "answers": [
+        { "text": "STADIUM / GAME", "points": 28 },
+        { "text": "CONCERT", "points": 20 },
+        { "text": "THEATER / MOVIES", "points": 18 },
+        { "text": "CLUB / BAR", "points": 12 },
+        { "text": "AMUSEMENT PARK", "points": 10 },
+        { "text": "AIRPORT", "points": 6 },
+        { "text": "MALL", "points": 4 },
+        { "text": "RESTAURANT", "points": 2 }
+      ]
+    }
+  ]
+}

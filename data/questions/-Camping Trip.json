@@ -1,0 +1,57 @@
+{
+  "name": "Camping Trip Edition",
+  "questions": [
+    {
+      "question": "Name something you bring camping.",
+      "answers": [
+        { "text": "TENT", "points": 35 },
+        { "text": "SLEEPING BAG", "points": 25 },
+        { "text": "MATCHES", "points": 15 },
+        { "text": "FLASHLIGHT", "points": 10 },
+        { "text": "BUG SPRAY", "points": 8 },
+        { "text": "FOOD", "points": 5 },
+        { "text": "MARSHMALLOWS", "points": 3 },
+        { "text": "FISHING POLE", "points": 2 }
+      ]
+    },
+    {
+      "question": "Name a reason to honk your horn.",
+      "answers": [
+        { "text": "CUT OFF", "points": 30 },
+        { "text": "GREEN LIGHT", "points": 22 },
+        { "text": "SAY HELLO", "points": 18 },
+        { "text": "WARNING", "points": 12 },
+        { "text": "ANIMAL", "points": 8 },
+        { "text": "PICK UP", "points": 5 },
+        { "text": "ROAD RAGE", "points": 3 },
+        { "text": "WEDDING", "points": 2 }
+      ]
+    },
+    {
+      "question": "Name something in a medicine cabinet.",
+      "answers": [
+        { "text": "PILLS", "points": 32 },
+        { "text": "TOOTHPASTE", "points": 20 },
+        { "text": "BANDAGES", "points": 15 },
+        { "text": "ALCOHOL", "points": 12 },
+        { "text": "RAZOR", "points": 8 },
+        { "text": "FLOSS", "points": 6 },
+        { "text": "DEODORANT", "points": 4 },
+        { "text": "THERMOMETER", "points": 3 }
+      ]
+    },
+    {
+      "question": "Name a popular pizza topping.",
+      "answers": [
+        { "text": "PEPPERONI", "points": 40 },
+        { "text": "SAUSAGE", "points": 25 },
+        { "text": "MUSHROOMS", "points": 15 },
+        { "text": "ONIONS", "points": 10 },
+        { "text": "BACON", "points": 6 },
+        { "text": "PEPPERS", "points": 4 },
+        { "text": "PINEAPPLE", "points": 3 },
+        { "text": "OLIVES", "points": 2 }
+      ]
+    }
+  ]
+}

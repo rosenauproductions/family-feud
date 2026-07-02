@@ -19,7 +19,7 @@ export const DEFAULT_SOUNDS = {
 export function defaultSetup() {
   return {
     title: '',
-    questionFile: 'party-1.json',
+    questionFile: '-Pairs.json',
     roundCount: 3,
     shuffleQuestions: true,
     skipIntro: false,

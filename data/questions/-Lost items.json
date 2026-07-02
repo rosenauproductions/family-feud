@@ -1,0 +1,44 @@
+{
+  "name": "Misc Mayhem Edition",
+  "questions": [
+    {
+      "question": "Name a place where people often lose their keys.",
+      "answers": [
+        { "text": "AT HOME / COUCH", "points": 30 },
+        { "text": "CAR", "points": 22 },
+        { "text": "PURSE / BAG", "points": 18 },
+        { "text": "STORE / MALL", "points": 12 },
+        { "text": "WORK / OFFICE", "points": 10 },
+        { "text": "BAR / RESTAURANT", "points": 5 },
+        { "text": "POCKET", "points": 3 },
+        { "text": "THE LOCK", "points": 2 }
+      ]
+    },
+    {
+      "question": "Name a place where you are told to use your 'inside voice'.",
+      "answers": [
+        { "text": "LIBRARY", "points": 35 },
+        { "text": "CHURCH / WORSHIP", "points": 25 },
+        { "text": "SCHOOL / CLASSROOM", "points": 15 },
+        { "text": "MOVIE THEATER", "points": 12 },
+        { "text": "DOCTOR / HOSPITAL", "points": 8 },
+        { "text": "MUSEUM", "points": 5 },
+        { "text": "COURTROOM", "points": 3 },
+        { "text": "FUNERAL", "points": 2 }
+      ]
+    },
+    {
+      "question": "If your dog ran away, name something you'd be surprised he took with him.",
+      "answers": [
+        { "text": "THE CAT", "points": 28 },
+        { "text": "LEASH / COLLAR", "points": 22 },
+        { "text": "FOOD BOWL", "points": 18 },
+        { "text": "BONE / TOY", "points": 12 },
+        { "text": "CLOTHES / SHOES", "points": 10 },
+        { "text": "BED / PILLOW", "points": 5 },
+        { "text": "WALLET / MONEY", "points": 3 },
+        { "text": "CAR KEYS", "points": 2 }
+      ]
+    }
+  ]
+}

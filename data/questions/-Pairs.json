@@ -1,0 +1,57 @@
+{
+  "name": "Things in Pairs Edition",
+  "questions": [
+    {
+      "question": "Name things that come in pairs.",
+      "answers": [
+        { "text": "SHOES", "points": 32 },
+        { "text": "SOCKS", "points": 25 },
+        { "text": "EYES", "points": 18 },
+        { "text": "HANDS / GLOVES", "points": 12 },
+        { "text": "FEET", "points": 8 },
+        { "text": "EARRINGS", "points": 5 },
+        { "text": "TWINS", "points": 3 },
+        { "text": "CHOPSTICKS", "points": 2 }
+      ]
+    },
+    {
+      "question": "Name an animal you might see at the zoo.",
+      "answers": [
+        { "text": "ELEPHANT", "points": 30 },
+        { "text": "LION", "points": 22 },
+        { "text": "MONKEY / APE", "points": 18 },
+        { "text": "GIRAFFE", "points": 12 },
+        { "text": "ZEBRA", "points": 10 },
+        { "text": "BEAR", "points": 5 },
+        { "text": "TIGER", "points": 3 },
+        { "text": "PENGUIN", "points": 2 }
+      ]
+    },
+    {
+      "question": "Name something some people are scared to ride.",
+      "answers": [
+        { "text": "AIRPLANE", "points": 28 },
+        { "text": "ROLLER COASTER", "points": 22 },
+        { "text": "MOTORCYCLE", "points": 18 },
+        { "text": "HORSE", "points": 12 },
+        { "text": "BOAT", "points": 8 },
+        { "text": "ELEVATOR", "points": 5 },
+        { "text": "FERRIS WHEEL", "points": 4 },
+        { "text": "TRAIN", "points": 3 }
+      ]
+    },
+    {
+      "question": "Name something people frequently lose.",
+      "answers": [
+        { "text": "KEYS", "points": 35 },
+        { "text": "PHONE", "points": 25 },
+        { "text": "WALLET", "points": 15 },
+        { "text": "REMOTE", "points": 10 },
+        { "text": "GLASSES", "points": 8 },
+        { "text": "SOCKS", "points": 5 },
+        { "text": "JEWELRY", "points": 3 },
+        { "text": "MIND", "points": 2 }
+      ]
+    }
+  ]
+}
