@@ -29,6 +29,8 @@ Port: `PORT` env (default `3456`). Cloud/Render: `render.yaml` Blueprint; skip m
 | `public/shared/` | `ws.js`, `audio.js`, `theme.css` |
 | `data/questions/*.json` | Question packs (filename = dropdown label) |
 | `extras/` | Pi systemd units + Chromium kiosk script |
+| `scripts/package.mjs` | Builds standalone zips (mac-arm64, mac-x64, win-x64, batocera-x64) with bundled Node |
+| `.github/workflows/packages.yml` | CI: builds packages on PRs; release on `v*` tags |
 
 **Clients:** Controller posts `/api/action`; display syncs via WebSocket. Audio plays **only on the display**.
 
@@ -81,6 +83,9 @@ Location: `data/questions/`. Format:
 7. **Netlify/static hosts** — Won’t work (needs Node + WebSockets). Use LAN Mac/Pi or Render/Railway/Fly.
 8. **In-memory state** — Redeploy / Render sleep resets the game.
 9. **Question filenames with spaces / leading `-`** — Supported; `path.basename` on load.
+10. **Join card (QR + LAN URL)** — Display setup screen only, local installs only (`/api/info` → `cloud` false). Hidden on Render; `/api/control-qr.svg` 404s there. Best LAN IP picked in `network.js` (prefers 192.168/10.x, skips virtual adapters).
+11. **bonjour-service** — Must get an error callback or mDNS socket errors crash the server (Windows). "Service name is already in use" is only a log line.
+12. **Batocera port** — `FamilyFeud.sh` starts node, runs Chrome AppImage (BUA add-on) in `--kiosk` with autoplay flag, kills node when Chrome exits (Hotkey+Start → Alt+F4 via `.keys`). SMB copies drop exec bits → launcher chmods / falls back to ld-linux.
 
 ## When editing
 
@@ -98,6 +103,8 @@ Location: `data/questions/`. Format:
 | Mac (party host) | `npm start`; phones use LAN IP or `feud.local` |
 | Raspberry Pi | `extras/feud.service` + `extras/pi-kiosk.sh` / `feud-kiosk.service` |
 | Render | Blueprint `render.yaml` or Web Service; free tier sleeps |
+| Standalone Mac/Windows | `npm run package` or CI artifacts; double-click launcher |
+| Batocera (x86_64) | `FamilyFeud-batocera-x64.zip` → `/userdata/roms/ports` |
 
 ## Not implemented
 

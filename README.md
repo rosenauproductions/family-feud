@@ -112,6 +112,24 @@ Restore that snapshot later: `git checkout milestone-v1-gameplay`
 npm run dev   # auto-restart on server changes
 ```
 
+## Standalone party packages (Mac, Windows, Batocera)
+
+No Node install needed: each zip bundles its own Node.js runtime. The waiting screen on the projector shows the host controller's local IP address and a QR code. Phones must be on the same Wi-Fi.
+
+| Package | For | Start |
+|---------|-----|-------|
+| `FamilyFeud-mac-arm64.zip` | Mac with Apple Silicon (M1–M4) | `Start Family Feud.command` |
+| `FamilyFeud-mac-x64.zip` | Intel Mac | `Start Family Feud.command` |
+| `FamilyFeud-win-x64.zip` | Windows 10/11 (64-bit) | `Start Family Feud.bat` |
+| `FamilyFeud-batocera-x64.zip` | Batocera on an x86_64 PC | Ports → FamilyFeud |
+
+- **Get them:** every pull request builds all four (Actions → *Standalone packages* → artifacts). Pushing a tag like `v1.0.0` publishes them as a GitHub Release.
+- **Build locally:** `npm run package`, or `node scripts/package.mjs --target win-x64`. Output goes to `dist/`.
+- **Question packs:** each package has an editable `Question Packs` folder (`FEUD_QUESTIONS_DIR`).
+- **Mac first run:** if macOS blocks the launcher, go to System Settings → Privacy & Security → *Open Anyway*, and allow incoming connections for `node`.
+- **Windows first run:** click *More info → Run anyway*. When the firewall asks about Node.js, allow **Private networks**.
+- **Batocera:** unzip into the share's `roms/ports`, then *Update Gamelists*. It needs Google Chrome from Batocera Unofficial Add-ons (Firefox flatpak works as a fallback). Hotkey + Start quits. The log is at `system/logs/familyfeud.log`.
+
 ## Deploy on Render (cloud)
 
 The app is a **Node web service** (HTTP + WebSockets). Render’s free tier works; expect a **~30s cold start** after idle sleep.

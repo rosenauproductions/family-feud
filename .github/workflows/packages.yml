@@ -1,0 +1,64 @@
+# Builds the standalone party packages (Mac, Windows, Batocera).
+#  - Pull requests / manual runs: zips are attached to the run as artifacts.
+#  - Tags like v1.0.0: zips are also published as a GitHub Release.
+# Render deploys from main and is not affected by this workflow.
+name: Standalone packages
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build packages (official Node.js 22 runtimes from nodejs.org)
+        run: node scripts/package.mjs
+
+      - name: Upload Mac (Apple Silicon)
+        uses: actions/upload-artifact@v4
+        with:
+          name: FamilyFeud-mac-arm64
+          path: dist/FamilyFeud-mac-arm64.zip
+          compression-level: 0
+
+      - name: Upload Mac (Intel)
+        uses: actions/upload-artifact@v4
+        with:
+          name: FamilyFeud-mac-x64
+          path: dist/FamilyFeud-mac-x64.zip
+          compression-level: 0
+
+      - name: Upload Windows
+        uses: actions/upload-artifact@v4
+        with:
+          name: FamilyFeud-win-x64
+          path: dist/FamilyFeud-win-x64.zip
+          compression-level: 0
+
+      - name: Upload Batocera
+        uses: actions/upload-artifact@v4
+        with:
+          name: FamilyFeud-batocera-x64
+          path: dist/FamilyFeud-batocera-x64.zip
+          compression-level: 0
+
+      - name: Publish release
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/FamilyFeud-*.zip \
+            --title "Family Feud $GITHUB_REF_NAME" \
+            --notes "Download the zip for your computer, unzip it, and read 'Read Me First' (Batocera: README.txt)."

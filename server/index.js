@@ -31,13 +31,16 @@ import {
 } from './gameState.js';
 import { MDNS_NAME, networkInfo } from './network.js';
 import { Bonjour } from 'bonjour-service';
+import QRCode from 'qrcode';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
-const QUESTIONS_DIR = path.join(ROOT, 'data', 'questions');
+// Standalone packages point this at a top-level "Question Packs" folder the host can edit
+const QUESTIONS_DIR = process.env.FEUD_QUESTIONS_DIR || path.join(ROOT, 'data', 'questions');
 const SOUNDS_DIR = path.join(ROOT, 'public', 'sounds');
 const PUBLIC_DIR = path.join(ROOT, 'public');
 const PORT = Number(process.env.PORT) || 3456;
+const IS_CLOUD = Boolean(process.env.RENDER);
 
 let state = createInitialState();
 state.phase = 'setup';
@@ -198,7 +201,22 @@ app.get('/api/sound-files', async (_req, res) => {
 });
 
 app.get('/api/info', (_req, res) => {
-  res.json(networkInfo(PORT));
+  res.json({ ...networkInfo(PORT), cloud: IS_CLOUD });
+});
+
+/** QR code for the host controller on the LAN (local installs only) */
+app.get('/api/control-qr.svg', async (_req, res) => {
+  const { controlUrl } = networkInfo(PORT);
+  if (IS_CLOUD || !controlUrl) {
+    res.status(404).end();
+    return;
+  }
+  try {
+    const svg = await QRCode.toString(controlUrl, { type: 'svg', margin: 1, errorCorrectionLevel: 'M' });
+    res.set('Cache-Control', 'no-store').type('image/svg+xml').send(svg);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
 app.post('/api/action', async (req, res) => {
@@ -218,6 +236,8 @@ app.get('/', (_req, res) => {
 
 const server = createServer(app);
 const wss = new WebSocketServer({ server });
+// ws re-emits the HTTP server's errors; server.on('error') below handles them
+wss.on('error', () => {});
 
 wss.on('connection', (ws, req) => {
   const url = new URL(req.url, `http://${req.headers.host}`);
@@ -248,14 +268,29 @@ wss.on('connection', (ws, req) => {
   });
 });
 
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error('');
+    console.error(`  Port ${PORT} is already in use — Family Feud may already be running.`);
+    console.error(`  Open http://localhost:${PORT}/display/ or close the other window and try again.`);
+    console.error('');
+    process.exit(1);
+  }
+  throw err;
+});
+
 server.listen(PORT, '0.0.0.0', async () => {
   const info = networkInfo(PORT);
   const files = await listQuestionFiles();
   const cloudBase = process.env.RENDER_EXTERNAL_URL?.replace(/\/$/, '');
 
-  if (!process.env.RENDER) {
+  if (!IS_CLOUD) {
     try {
-      const bonjour = new Bonjour();
+      // Without an error callback, bonjour-service throws on mDNS socket errors
+      // (common on Windows when port 5353 is busy) and takes the game server down.
+      const bonjour = new Bonjour({}, (err) => {
+        console.warn('  mDNS: feud.local unavailable —', err.message, '(use the IP address instead)');
+      });
       bonjour.publish({
         name: MDNS_NAME,
         type: 'http',
@@ -273,19 +308,24 @@ server.listen(PORT, '0.0.0.0', async () => {
     console.log(`  Display:    ${cloudBase}/display/`);
     console.log(`  Controller: ${cloudBase}/control/`);
   } else {
-    console.log(`  Primary:    ${info.mdnsUrl}`);
-    console.log(`  Display:    ${info.mdnsUrl}/display/`);
-    console.log(`  Controller: ${info.mdnsUrl}/control/`);
+    const primary = info.lanUrl ?? `http://localhost:${PORT}`;
+    console.log(`  Display (this computer): http://localhost:${PORT}/display/`);
+    console.log(`  Host controller (phone): ${primary}/control/`);
     console.log('');
-    console.log('  Also try:');
+    console.log('  The projector screen shows a QR code for the controller.');
+    console.log('  Phone and this computer must be on the same Wi-Fi.');
+    console.log('');
+    console.log('  Other addresses to try:');
     for (const url of info.bases) {
-      if (url !== info.mdnsUrl) {
+      if (url !== primary) {
         console.log(`    ${url}/control/`);
       }
     }
+    console.log('');
+    console.log('  Keep this window open while you play. Close it to stop the game.');
   }
   console.log('');
   console.log(`  Question packs: ${files.join(', ')}`);
-  console.log('  Put sound files in public/sounds/ (see README)');
+  console.log(`  Question pack folder: ${QUESTIONS_DIR}`);
   console.log('');
 });

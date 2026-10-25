@@ -646,3 +646,35 @@ document.addEventListener('keydown', (e) => {
     }
   }
 });
+
+// ── Host join card (local installs only) ─────────────────────────────
+// Shows the controller's LAN address + QR on the waiting screen so the host
+// can pick up a phone and scan. Hidden on cloud deploys (Render).
+let joinUrlShown = null;
+
+async function refreshJoinCard() {
+  const card = document.getElementById('join-card');
+  if (!card) return;
+  try {
+    const res = await fetch('/api/info', { cache: 'no-store' });
+    if (!res.ok) return;
+    const info = await res.json();
+    if (info.cloud || !info.controlUrl) {
+      card.classList.add('hidden');
+      joinUrlShown = null;
+      return;
+    }
+    if (info.controlUrl !== joinUrlShown) {
+      joinUrlShown = info.controlUrl;
+      document.getElementById('join-url').textContent = info.controlUrl.replace(/^http:\/\//, '');
+      document.getElementById('join-qr').src = `/api/control-qr.svg?u=${encodeURIComponent(info.controlUrl)}`;
+    }
+    card.classList.remove('hidden');
+  } catch {
+    // Server restarting — try again on the next tick
+  }
+}
+
+refreshJoinCard();
+// Re-check in case the computer joins a different Wi-Fi after launch
+setInterval(refreshJoinCard, 30000);
