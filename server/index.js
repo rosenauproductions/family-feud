@@ -32,6 +32,7 @@ import {
 import { MDNS_NAME, networkInfo } from './network.js';
 import { Bonjour } from 'bonjour-service';
 import QRCode from 'qrcode';
+import { validatePack, hasErrors, isSafeFilename, normalizePack, formatPackJson } from '../public/shared/packFormat.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -191,6 +192,61 @@ app.get('/api/question-files', async (_req, res) => {
   }
 });
 
+/** Read one question pack (used by the question bank editor) */
+app.get('/api/question-packs/:file', async (req, res) => {
+  const file = req.params.file;
+  if (!isSafeFilename(file)) {
+    res.status(400).json({ error: 'Invalid pack filename' });
+    return;
+  }
+  try {
+    const raw = await fs.readFile(path.join(QUESTIONS_DIR, file), 'utf8');
+    res.json({ file, pack: JSON.parse(raw) });
+  } catch (err) {
+    res.status(err.code === 'ENOENT' ? 404 : 500).json({ error: err.code === 'ENOENT' ? 'Pack not found' : err.message });
+  }
+});
+
+/**
+ * Save a question pack into the question folder. Local installs only: on the
+ * cloud the disk is wiped on every deploy/sleep and the site is public.
+ */
+app.put('/api/question-packs/:file', async (req, res) => {
+  if (IS_CLOUD) {
+    res.status(403).json({ error: 'Saving is turned off on the cloud version. Download the file and add it to the repo instead.' });
+    return;
+  }
+  const file = req.params.file;
+  if (!isSafeFilename(file)) {
+    res.status(400).json({ error: 'Pick a simple filename ending in .json (no slashes or special characters).' });
+    return;
+  }
+  const pack = normalizePack(req.body?.pack);
+  const issues = validatePack(pack);
+  if (hasErrors(issues)) {
+    res.status(422).json({ error: 'Fix the errors before saving.', issues });
+    return;
+  }
+
+  const target = path.join(QUESTIONS_DIR, file);
+  try {
+    if (!req.body?.overwrite) {
+      const exists = await fs.access(target).then(() => true, () => false);
+      if (exists) {
+        res.status(409).json({ error: `${file} already exists.` });
+        return;
+      }
+    }
+    await fs.mkdir(QUESTIONS_DIR, { recursive: true });
+    const tmp = `${target}.${process.pid}.tmp`;
+    await fs.writeFile(tmp, formatPackJson(pack), 'utf8');
+    await fs.rename(tmp, target);
+    res.json({ ok: true, file, warnings: issues.length });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 app.get('/api/sound-files', async (_req, res) => {
   try {
     const files = await listSoundFiles();
@@ -311,6 +367,7 @@ server.listen(PORT, '0.0.0.0', async () => {
     const primary = info.lanUrl ?? `http://localhost:${PORT}`;
     console.log(`  Display (this computer): http://localhost:${PORT}/display/`);
     console.log(`  Host controller (phone): ${primary}/control/`);
+    console.log(`  Question bank editor:    ${primary}/editor/`);
     console.log('');
     console.log('  The projector screen shows a QR code for the controller.');
     console.log('  Phone and this computer must be on the same Wi-Fi.');

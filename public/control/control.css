@@ -218,3 +218,13 @@
   opacity: 0.8;
   margin-bottom: 0.5rem;
 }
+
+.field-note {
+  margin: 0.4rem 0 0;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.field-note a {
+  color: var(--feud-gold);
+}

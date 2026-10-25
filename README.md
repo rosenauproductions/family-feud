@@ -85,6 +85,30 @@ JSON files in `data/questions/`. Example:
 
 Select a pack and round count in setup. Questions are shuffled by default.
 
+**Rules:** up to 8 answers per question (4–8 plays best). Points are whole numbers, sorted from highest to lowest, adding up to 100. The board shows answers in CAPS automatically. Schema: [`public/editor/question-pack.schema.json`](public/editor/question-pack.schema.json).
+
+### Question bank editor (desktop browser)
+
+Open **`http://<game-address>/editor/`** on a computer while the game is running. The console window and the controller's setup screen both show the link.
+
+- **+ New pack:** type a name, then add questions and answers. Enter jumps to the next field.
+- **Click a pack** on the left to edit it. **Open .json file…** loads one from your computer.
+- **Check** (right panel) lists problems live. Red items block saving, yellow items are tips. Click one to jump to it.
+- **Sort by points** and **Make it 100** fix a question's order and total in one click.
+- **Board preview** shows the focused question the way it will look on the projector.
+- **Save to game** writes into the game's question folder (`data/questions/`, or `Question Packs` in the standalone packages). Then pick it in the controller's pack list.
+- **Download .json / Copy JSON** for sharing, or for adding to the repo. On Render, saving is turned off (the disk resets), so download the file and commit it to `data/questions/`.
+- Work in progress is kept in the browser, so a refresh doesn't lose it.
+
+### Making packs with AI
+
+The template [`public/editor/ai-template.md`](public/editor/ai-template.md) works with any AI chat (ChatGPT, Claude, Gemini, Copilot…):
+
+1. In the editor, click **✨ AI prompt**, enter a topic, audience and number of questions, then **Copy prompt**. You can also copy the template by hand and fill in the `[[…]]` values.
+2. Paste the prompt into the AI and copy its whole reply.
+3. In the editor, click **⬇ Import from AI** and paste. Code fences and extra chatter are stripped automatically.
+4. Fix anything the **Check** panel flags (AIs often miss the 100-point total, which **Make it 100** fixes), then **Save to game**.
+
 ## Game flow
 
 1. **Setup** — teams, colors, icons, question pack, rounds, face-off toggle
