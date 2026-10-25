@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "family-feud/question-pack.schema.json",
+  "title": "Family Feud question pack",
+  "description": "One question pack for the Family Feud party game. Save as data/questions/<name>.json (or the Question Packs folder in a standalone package).",
+  "type": "object",
+  "required": ["name", "questions"],
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Display name of the pack, e.g. \"Things in Pairs Edition\"."
+    },
+    "questions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["question", "answers"],
+        "additionalProperties": false,
+        "properties": {
+          "question": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Survey-style prompt, e.g. \"Name something that comes in pairs.\""
+          },
+          "answers": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 8,
+            "description": "Board answers, sorted from most to fewest points. 4-8 recommended; points should total 100.",
+            "items": {
+              "type": "object",
+              "required": ["text", "points"],
+              "additionalProperties": false,
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Answer shown on the board (CAPS by convention; synonyms joined with \" / \")."
+                },
+                "points": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "description": "How many of 100 surveyed people gave this answer."
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

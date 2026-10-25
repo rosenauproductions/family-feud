@@ -28,6 +28,8 @@ Port: `PORT` env (default `3456`). Cloud/Render: `render.yaml` Blueprint; skip m
 | `public/control/` | Host phone UI (setup + in-game actions) |
 | `public/shared/` | `ws.js`, `audio.js`, `theme.css` |
 | `data/questions/*.json` | Question packs (filename = dropdown label) |
+| `public/editor/` | Desktop question bank editor (`/editor/`), AI prompt template `ai-template.md`, JSON schema |
+| `public/shared/packFormat.js` | Pack rules shared by server + editor: validate, parse AI text, format, scale to 100 |
 | `extras/` | Pi systemd units + Chromium kiosk script |
 | `scripts/package.mjs` | Builds standalone zips (mac-arm64, mac-x64, win-x64, batocera-x64) with bundled Node |
 | `.github/workflows/packages.yml` | CI: builds packages on PRs; release on `v*` tags |
@@ -86,6 +88,8 @@ Location: `data/questions/`. Format:
 10. **Join card (QR + LAN URL)** — Display setup screen only, local installs only (`/api/info` → `cloud` false). Hidden on Render; `/api/control-qr.svg` 404s there. Best LAN IP picked in `network.js` (prefers 192.168/10.x, skips virtual adapters).
 11. **bonjour-service** — Must get an error callback or mDNS socket errors crash the server (Windows). "Service name is already in use" is only a log line.
 12. **Batocera port** — `FamilyFeud.sh` starts node, runs Chrome AppImage (BUA add-on) in `--kiosk` with autoplay flag, kills node when Chrome exits (Hotkey+Start → Alt+F4 via `.keys`). SMB copies drop exec bits → launcher chmods / falls back to ld-linux.
+13. **Question pack API** — `GET/PUT /api/question-packs/:file`. PUT is local-only (403 on Render), validates with `packFormat.js`, refuses unsafe filenames, 409 unless `overwrite`. Writes to `FEUD_QUESTIONS_DIR`.
+14. **Pack rules live in one place** — `public/shared/packFormat.js` (server imports it from `../public/shared`). Keep `ai-template.md` and `question-pack.schema.json` in sync when rules change.
 
 ## When editing
 

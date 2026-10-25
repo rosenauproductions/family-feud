@@ -79,6 +79,7 @@ function renderSetup() {
             )
             .join('')}
         </select>
+        <p class="field-note">New packs: open <a href="/editor/" target="_blank" rel="noopener">${escapeHtml(location.host)}/editor/</a> on a computer.</p>
       </div>
       <div class="field">
         <label>Number of rounds</label>

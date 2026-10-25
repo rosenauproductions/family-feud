@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Question Bank Editor — Family Feud</title>
+  <link rel="stylesheet" href="/shared/theme.css" />
+  <link rel="stylesheet" href="/editor/editor.css" />
+</head>
+<body class="editor-body">
+  <header class="ed-header">
+    <div class="ed-header__title">
+      <h1>Question Bank Editor</h1>
+      <span id="mode-badge" class="mode-badge">…</span>
+    </div>
+    <nav class="ed-header__actions">
+      <button class="ed-btn ed-btn--ghost" id="btn-ai-prompt" title="Build a prompt to paste into ChatGPT, Claude, Gemini…">✨ AI prompt</button>
+      <button class="ed-btn ed-btn--ghost" id="btn-import" title="Paste JSON from an AI or another pack">⬇ Import from AI</button>
+      <button class="ed-btn ed-btn--ghost" id="btn-help">? How it works</button>
+    </nav>
+  </header>
+
+  <div class="ed-layout">
+    <aside class="ed-sidebar" aria-label="Question packs">
+      <div class="ed-sidebar__actions">
+        <button class="ed-btn ed-btn--primary ed-btn--block" id="btn-new">+ New pack</button>
+        <label class="ed-btn ed-btn--ghost ed-btn--block ed-file">
+          Open .json file…
+          <input type="file" id="file-open" accept=".json,application/json" />
+        </label>
+      </div>
+      <h2 class="ed-section-label">Packs in the game</h2>
+      <ul id="pack-list" class="pack-list"></ul>
+    </aside>
+
+    <main class="ed-main" id="main">
+      <section class="pack-head">
+        <div class="pack-head__fields">
+          <label class="ed-field ed-field--grow">
+            <span>Pack name</span>
+            <input id="pack-name" type="text" placeholder="e.g. Halloween Edition" autocomplete="off" />
+          </label>
+          <label class="ed-field">
+            <span>File name</span>
+            <input id="pack-file" type="text" placeholder="-Halloween.json" autocomplete="off" spellcheck="false" />
+          </label>
+        </div>
+        <div class="pack-head__bar">
+          <span id="pack-stats" class="pack-stats"></span>
+          <span id="dirty-flag" class="dirty-flag hidden">Unsaved changes</span>
+          <div class="pack-head__buttons">
+            <button class="ed-btn ed-btn--ghost" id="btn-copy">Copy JSON</button>
+            <button class="ed-btn ed-btn--ghost" id="btn-download">Download .json</button>
+            <button class="ed-btn ed-btn--primary" id="btn-save">Save to game</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="questions" class="questions" aria-live="polite"></section>
+
+      <button class="ed-btn ed-btn--add" id="btn-add-question">+ Add question</button>
+    </main>
+
+    <aside class="ed-check" aria-label="Check and preview">
+      <h2 class="ed-section-label">Board preview</h2>
+      <div id="preview" class="preview"></div>
+      <h2 class="ed-section-label">Check <span id="check-summary" class="check-summary"></span></h2>
+      <ul id="issues" class="issues"></ul>
+    </aside>
+  </div>
+
+  <div id="toast" class="toast hidden" role="status"></div>
+
+  <!-- Import -->
+  <dialog id="dlg-import" class="ed-dialog">
+    <form method="dialog" class="ed-dialog__body">
+      <h2>Import from AI</h2>
+      <p class="muted">Paste the AI's whole reply. Code fences and chatter around the JSON are fine.</p>
+      <textarea id="import-text" rows="16" spellcheck="false" placeholder='{ "name": "…", "questions": [ … ] }'></textarea>
+      <p id="import-error" class="form-error hidden"></p>
+      <div class="ed-dialog__buttons">
+        <label class="inline-check"><input type="checkbox" id="import-append" /> Add to the current pack instead of replacing it</label>
+        <button value="cancel" class="ed-btn ed-btn--ghost">Cancel</button>
+        <button id="import-go" value="default" class="ed-btn ed-btn--primary">Import</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- AI prompt builder -->
+  <dialog id="dlg-prompt" class="ed-dialog ed-dialog--wide">
+    <form method="dialog" class="ed-dialog__body">
+      <h2>Make a pack with any AI</h2>
+      <ol class="steps">
+        <li>Fill in the theme below.</li>
+        <li><strong>Copy prompt</strong>, paste it into ChatGPT, Claude, Gemini or Copilot.</li>
+        <li>Copy the AI's reply, then use <strong>Import from AI</strong> here to check and fix it.</li>
+      </ol>
+      <div class="prompt-grid">
+        <label class="ed-field"><span>Topic / theme</span><input id="p-topic" type="text" placeholder="Halloween, our family vacation, Star Wars…" /></label>
+        <label class="ed-field"><span>Who's playing</span><input id="p-audience" type="text" value="Families with kids 8 and up" /></label>
+        <label class="ed-field"><span>Questions</span><input id="p-count" type="number" min="1" max="30" value="8" /></label>
+        <label class="ed-field"><span>Pack name</span><input id="p-name" type="text" placeholder="Halloween Edition" /></label>
+      </div>
+      <textarea id="p-output" rows="12" readonly spellcheck="false"></textarea>
+      <div class="ed-dialog__buttons">
+        <a class="muted small" href="/editor/ai-template.md" target="_blank" rel="noopener">View raw template</a>
+        <button value="cancel" class="ed-btn ed-btn--ghost">Close</button>
+        <button id="p-copy" value="default" class="ed-btn ed-btn--primary">Copy prompt</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Help -->
+  <dialog id="dlg-help" class="ed-dialog ed-dialog--wide">
+    <form method="dialog" class="ed-dialog__body help">
+      <h2>How the question bank works</h2>
+      <h3>Make a pack</h3>
+      <ul>
+        <li><strong>By hand:</strong> click <em>+ New pack</em>, type a name, then add questions and answers.</li>
+        <li><strong>With AI:</strong> click <em>✨ AI prompt</em>, describe the theme, copy the prompt into any AI, then paste its reply into <em>Import from AI</em>.</li>
+        <li><strong>Edit an existing pack:</strong> click it in the list on the left.</li>
+      </ul>
+      <h3>Rules the game expects</h3>
+      <ul>
+        <li>Up to <strong>8 answers</strong> per question (the board has 8 slots). 4–8 plays best.</li>
+        <li>Points are how many of 100 surveyed people said it: whole numbers, highest first, adding up to <strong>100</strong>.</li>
+        <li>Use <em>Sort</em> and <em>Make it 100</em> on a question to fix order and totals in one click.</li>
+        <li>Join synonyms with " / " (e.g. <code>TV / TELEVISION</code>). The board shows answers in CAPS automatically.</li>
+        <li><span class="dot dot--error"></span> Red issues block saving. <span class="dot dot--warning"></span> Yellow ones are suggestions.</li>
+      </ul>
+      <h3>Saving</h3>
+      <ul>
+        <li><strong>Save to game</strong> writes the pack into the game's question folder. On the host controller, reopen setup (or refresh) and pick it from the pack list.</li>
+        <li><strong>Download .json</strong> saves a copy to your computer. For the cloud (Render) version, add downloaded files to <code>data/questions/</code> in the GitHub repo. Saving there is turned off.</li>
+        <li>Your work-in-progress is kept in this browser, so a refresh won't lose it.</li>
+      </ul>
+      <div class="ed-dialog__buttons">
+        <button value="cancel" class="ed-btn ed-btn--primary">Got it</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="/editor/editor.js"></script>
+</body>
+</html>
